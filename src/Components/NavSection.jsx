@@ -8,13 +8,13 @@ const NavSection=()=>{
                 <ul  className="flex w-full justify-start text-xl text-black">
                     <li className="p-4"><NavLink to="/" className={({isActive})=>
                         `relative px-3 py-2 ${
-                        isActive? "text-[#1A0710D9] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-red-500 "
+                        isActive? "text-[#1A0710D9] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-red-500 after:rounded-sm after:transition-all "
                         : "text-[#1A0710A6]"
                     }`
                     }>Register</NavLink></li>
                     <li className="p-4"><NavLink to="/Login" className={({isActive})=>
                         `relative px-3 py-2 ${
-                        isActive? "text-[#1A0710D9] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-[#EF498F] "
+                        isActive? "text-[#1A0710D9] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-red-500 after:rounded-sm after:transition-all "
                         : "text-[#1A0710A6]"
                     }`}>Login</NavLink></li>
                     <li className={`p-4  ml-auto`}><CloseIcon /></li>
