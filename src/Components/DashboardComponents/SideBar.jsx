@@ -1,25 +1,32 @@
-import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import PortraitOutlinedIcon from '@mui/icons-material/PortraitOutlined';
-import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
-import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
-import LiveHelpOutlinedIcon from '@mui/icons-material/LiveHelpOutlined';
+
 import CloseIcon from "@mui/icons-material/Close";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import settingsIcon from '../../assets/setting 1.png';
+import UpgradeCard from "./UpgradeCard";
+import squareIcon from '../../assets/3d-square 1.png';
+import keyIcon from '../../assets/key-square.png'; 
+import userIcon from '../../assets/user-square 1.png';
+import incomeIcon from '../../assets/wallet-money 2.png' 
+import promoteIcon from '../../assets/discount-shape 1.png'; 
+import helpIcon from '../../assets/message-question 1.png'; 
+ 
+import ProfileCard from "./ProfileCard";
 const Sidebar = ({ isOpen, onClose }) => {
   const navItems = [
-    { label: "Dashboard", icon: <DashboardOutlinedIcon /> },
-    { label: "Product", icon: <ShoppingCartOutlinedIcon />,icon2: <ChevronRightIcon /> },
-    { label: "Customers", icon: <PortraitOutlinedIcon />, icon2: <ChevronRightIcon />  },
-    { label: "Income", icon: <AttachMoneyOutlinedIcon />, icon2: <ChevronRightIcon /> },
-    { label: "Promote", icon: <VerifiedOutlinedIcon />, icon2: <ChevronRightIcon /> },
-    { label: "Help", icon: <LiveHelpOutlinedIcon />, icon2: <ChevronRightIcon /> },
+    { label: "Dashboard", icon: keyIcon,  },
+    { label: "Product", icon: squareIcon, icon2: <ChevronRightIcon /> },
+    { label: "Customers", icon: userIcon, icon2: <ChevronRightIcon />  },
+    { label: "Income", icon: incomeIcon, icon2: <ChevronRightIcon /> },
+    { label: "Promote", icon: promoteIcon, icon2: <ChevronRightIcon /> },
+    { label: "Help", icon: helpIcon, icon2: <ChevronRightIcon /> },
   ];
 
   return (
     <>
     <aside id="sideBar" className="hidden sm:block w-20 md:w-60 bg-[#FFFFFF] p-4 ">
-      <div className="text-2xl font-bold mb-8 hidden md:block">Dashboard</div>
+      <div className="text-2xl font-bold mb-8 hidden md:block">
+        <div className=" flex gap-2  text-xl font-bold mb-6"><img src={settingsIcon} className="w-7 h-7"/> Dashboard</div>
+      </div>
       <nav className="space-y-4">
         {navItems.map(({ label, icon, icon2 }, i) => (
           <div
@@ -28,12 +35,14 @@ const Sidebar = ({ isOpen, onClose }) => {
               label === "Customers" ? "bg-[#5932EA] text-white" : ""
             }`}
           >
-            <span>{icon}</span>
+            <img src={icon}/>
             <span className="hidden md:inline">{label}</span>
             <span className=" ml-auto">{icon2}</span>
           </div>
         ))}
       </nav>
+      <UpgradeCard />
+      <ProfileCard />
     </aside>
 
     
@@ -48,7 +57,7 @@ const Sidebar = ({ isOpen, onClose }) => {
             <CloseIcon />
           </button>
         </div>
-        <div className="text-xl font-bold mb-6">Dashboard</div>
+        <div className=" flex gap-2 text-xl font-bold mb-6"><img src={settingsIcon} className="w-6 h-6"/> Dashboard</div>
         <nav className="space-y-4">
           {navItems.map(({ label, icon,icon2 }, i) => (
             <div
@@ -57,12 +66,14 @@ const Sidebar = ({ isOpen, onClose }) => {
                 label === "Customers" ? "bg-[#5932EA] text-white" : ""
               }`}
             >
-              <span>{icon}</span>
+              <img src={icon}/>
               <span>{label}</span>
               <span className="ml-auto">{icon2}</span>
             </div>
           ))}
         </nav>
+        
+        
       </div>
 
       {/* Backdrop */}
