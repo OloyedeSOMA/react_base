@@ -47,7 +47,7 @@ const FormComponent=({initialValues, onSubmit, buttonText, loadingText})=>{
             Password
           </label>
           {touched.password && errors.password ? (
-            <div className="error">{errors.password}</div>
+            <div className="error text-red-500">{errors.password}</div>
           ) : (
             <p className="text-sm text-gray-500">8+ characters</p>
           )}
