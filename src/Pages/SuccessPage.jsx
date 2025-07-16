@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
-import success from '../../assets/success.png'
-import CustomButton from '../CustomComponents/CustomButton';
-import CustomWrapper from '../CustomComponents/CustomWrapper';
+import success from '../assets/success.png'
+import CustomButton from '../Components/CustomComponents/CustomButton';
+import CustomWrapper from '../Components/CustomComponents/CustomWrapper';
 const SuccessPage=()=>{
     const navigate = useNavigate();
     const loginNavigateHandler=()=>{

@@ -1,9 +1,16 @@
+import { useState } from "react";
 import { Formik, Form, Field} from "formik";
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined' ;
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'; 
 
-import { SignUpSchema } from "./utils/ValidationSchema";
+import { SignUpSchema } from "../utils/ValidationSchema";
 import CustomButton from "./CustomComponents/CustomButton";
 const FormComponent=({initialValues, onSubmit, buttonText, loadingText})=>{
-  
+  const [Visibility, setVisibiltity] = useState(false);
+  const toggleVisibility=()=>{
+    setVisibiltity( !Visibility);
+
+  }
   return(
     <Formik
       initialValues={initialValues}
@@ -11,7 +18,7 @@ const FormComponent=({initialValues, onSubmit, buttonText, loadingText})=>{
       onSubmit={onSubmit}
     >
     {({ isSubmitting, errors, touched  }) => (
-      <Form>
+      <Form className="mx-auto p-2">
         {/* Email Field */}
         <div className="relative w-full max-w-sm mx-auto mb-10 mt-5">
           {errors.general && <p className="text-red-500">{errors.general}</p>}
@@ -21,7 +28,7 @@ const FormComponent=({initialValues, onSubmit, buttonText, loadingText})=>{
             rounded-xl px-3 pt-6 pb-2 focus:outline-none focus:ring-2 focus:ring-[#5932EA]"
             placeholder=""
           />
-          <label
+          <label htmlFor="email"
             className="absolute left-3 top-2 text-gray-500 text-sm transition-all duration-200
             peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600"
           >
@@ -36,11 +43,16 @@ const FormComponent=({initialValues, onSubmit, buttonText, loadingText})=>{
         <div className="relative w-full max-w-sm mx-auto">
           <Field
             name="password"
+            type={Visibility? 'text': 'password'}
             className="peer w-full border border-gray-400 
             rounded-xl px-3 pt-6 pb-2 focus:outline-none focus:ring-2 focus:ring-[#5932EA]"
-            placeholder=""
-          />
-          <label
+            placeholder="" 
+            />
+            <span className="absolute right-3 top-5" fontSize="small" onClick={toggleVisibility}>
+                {Visibility? <VisibilityOffOutlinedIcon  />: <VisibilityOutlinedIcon />}
+            </span>
+          
+          <label htmlFor="password"
             className="absolute left-3 top-2 text-gray-500 text-sm transition-all duration-200
             peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600"
           >

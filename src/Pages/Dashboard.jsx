@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import {useAuth} from '../Context/AuthContext';
-import SideBar from '../DashboardComponents/SideBar';
-import Header from '../DashboardComponents/Header';
-import AnalyticsComponent from '../DashboardComponents/AnalyticsComponent';
-import  Table from '../DashboardComponents/Table';
+import {useAuth} from '../Components/Context/AuthContext';
+import SideBar from '../Components/DashboardComponents/SideBar';
+import Header from '../Components/DashboardComponents/Header';
+import AnalyticsComponent from '../Components/DashboardComponents/AnalyticsComponent';
+import  Table from '../Components/DashboardComponents/Table';
 import MenuIcon from "@mui/icons-material/Menu";
 
 

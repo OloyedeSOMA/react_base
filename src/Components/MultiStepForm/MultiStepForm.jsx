@@ -7,7 +7,7 @@ import { Formik,Form} from "formik";
 import PersonalInfoForm from "./steps/PersonalInfoForm";
 import AddressSearchBlock from "./steps/AddressSearchBlock";
 import AddressForm from "./steps/AddressForm";
-import { StepFormSchema } from "../utils/ValidationSchema";
+import { StepFormSchema } from "../../utils/ValidationSchema";
 
 import CloseIcon from '@mui/icons-material/Close';
 

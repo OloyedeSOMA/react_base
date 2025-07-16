@@ -1,6 +1,6 @@
-import { useState } from 'react'
+
 // import NavSection from './Components/NavSection'
-import Register from './Components/Pages/Register'
+import Register from './Pages/Register'
 import './App.css'
 
 function App() {

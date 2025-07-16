@@ -1,7 +1,7 @@
 import './CustomWrapper.css'
 const CustomWrapper=(props)=>{
     return(
-        <div id="wrapper">
+        <div id="wrapper" className = {props.className} >
             {props.children}
         </div>
     );
